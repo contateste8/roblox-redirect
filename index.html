@@ -2,21 +2,21 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Redirecionando para o Roblox...</title>
+  <title>Redirecionando para o Servidor...</title>
 </head>
 <body>
-  <p>Redirecionando para o Roblox com o Job ID...</p>
+  <p>Redirecionando...</p>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const jobId = params.get("jobId");
-    const placeId = "4924922222"; // seu placeId fixo
+    const placeId = "4924922222";
 
     if (jobId) {
       const robloxUrl = `roblox://experiences/start?placeId=${placeId}&gameInstanceId=${jobId}`;
       window.location.href = robloxUrl;
     } else {
-      document.body.innerHTML = "<p style='color:red;'>Job ID não informado na URL.</p>";
+      document.body.innerHTML = "<p style='color:red;'>Job ID não informado</p>";
     }
   </script>
 </body>
