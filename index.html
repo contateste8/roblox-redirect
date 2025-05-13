@@ -3,9 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title>Redirecionando para o Servidor...</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    p {
+      color: #003366; /* azul escuro */
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+    }
+
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 3px solid #ccc;
+      border-top: 3px solid #003366;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-  <p>Redirecionando...</p>
+  <p>
+    Redirecionando para o Servidor...
+    <span class="spinner"></span>
+  </p>
+  <p>
+    Redirecionando...
+    <span class="spinner"></span>
+  </p>
 
   <script>
     const params = new URLSearchParams(window.location.search);
@@ -16,7 +57,10 @@
       const robloxUrl = `roblox://experiences/start?placeId=${placeId}&gameInstanceId=${jobId}`;
       window.location.href = robloxUrl;
     } else {
-      document.body.innerHTML = "<p style='color:red;'>Job ID não informado</p>";
+      document.body.innerHTML = `
+        <p style="color: red; font-family: 'Roboto', sans-serif;">
+          Job ID não informado
+        </p>`;
     }
   </script>
 </body>
